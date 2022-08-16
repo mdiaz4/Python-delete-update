@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Person Update, ID: <b> {{ value }}</b></h1>
+   
+        <br>
+            <form action="/person_update_for_real" method="post">
+                <input type="hidden" id="op" name="op" value="I">
+
+
+		<input type="hidden" id="holder_not_for_use" name="id_estatica_person" value={{ value }}>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_name">First Name</span>
+                    <input type="text" class="form-control" name="first_name" aria-label="Sizing example input" aria-describedby="inputGroup_name">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_lastName">Last Name</span>
+                    <input type="text" class="form-control" name="last_name" aria-label="Sizing example input" aria-describedby="inputGroup_lastName">
+                </div>
+                <br >
+                <input class="btn btn-primary" type="submit" name="form" value="Submit" />
+            </form>
+</div>
+{% endblock %}
